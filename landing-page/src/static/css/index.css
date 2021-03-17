@@ -7,7 +7,7 @@
   height: 250px;
   margin-top: 320px;
   width: 100%;
-  background: url("../../img/website bg.png");
+  background: url("../img/website bg.png");
   position: absolute;
   top: 0;
   z-index: -1;
@@ -18,7 +18,7 @@
   height: 380px;
   margin-top: 200px;
   width: 100%;
-  background: url("../../img/website bg.png");
+  background: url("../img/website bg.png");
   position: absolute;
   top: 0;
   z-index: -1;

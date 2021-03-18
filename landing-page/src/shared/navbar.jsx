@@ -150,13 +150,16 @@ export default class Navbar extends React.Component {
                   <MDBDropdownItem>Statutes</MDBDropdownItem>
                 </MDBDropdownMenu>
               </MDBDropdown>
+
+              {/* {this.adminPanel()} */}
+            </MDBNavbarNav>
+            <MDBNavbarNav left>
               <MDBNavbarBrand href='/'>
                 <strong>
                   <img src={Logo} alt='logo' width='80px' height='auto' />
                   {/* Ask Riashad */}
                 </strong>
               </MDBNavbarBrand>
-              {/* {this.adminPanel()} */}
             </MDBNavbarNav>
             {/* <MDBBtnGroup>
               <MDBBtn color='amber'>User Name</MDBBtn>

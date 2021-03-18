@@ -7,7 +7,7 @@ export default function Layout(props) {
     <div>
       <div className='mt-5'></div>
       <Navbar />
-      <div style={{ height: "200px" }} />
+      <div style={{ height: "50px" }} />
       <div style={{ minHeight: "45vh" }}>{props.children}</div>
       <Footer></Footer>
     </div>

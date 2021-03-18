@@ -15,6 +15,8 @@ import {
   MDBDropdownMenu,
   MDBDropdownItem,
   MDBBtnGroup,
+  MDBRow,
+  MDBCol,
 } from "mdbreact";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
@@ -91,7 +93,7 @@ export default class Navbar extends React.Component {
         className='z-depth-0'
         scrolling
       >
-        <MDBContainer>
+        <MDBContainer className='w-100' size='100%'>
           {!this.state.isWidthEnough && (
             <MDBNavbarToggler onClick={this.onClick} />
           )}
@@ -162,7 +164,7 @@ export default class Navbar extends React.Component {
               <MDBDropdownItem>Profile</MDBDropdownItem>
               <MDBDropdownItem>Sign Out</MDBDropdownItem>
             </MDBBtnGroup> */}
-            <MDBNavbarNav right>
+            <MDBNavbarNav right ml-0>
               <MDBDropdown size='sm'>
                 <MDBDropdownToggle nav caret color='amber'>
                   User Name

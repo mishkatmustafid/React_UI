@@ -1,12 +1,20 @@
-import React from 'react';
-import { MDBNotification } from 'mdbreact';
+import React from "react";
+import { MDBNotification } from "mdbreact";
 
 export default function Notify(props) {
   return (
     <MDBNotification
-    fade
-    title={props.title}
-    message={props.message}
-    style
+      show
+      fade
+      iconClassName='text-primary'
+      title={props.title}
+      message={props.message}
+      style={{
+        position: "fixed",
+        top: "5px",
+        right: "10px",
+        zIndex: 9999,
+      }}
+    />
   );
 }

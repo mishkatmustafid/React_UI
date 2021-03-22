@@ -18,11 +18,11 @@ export default class Button extends Component {
   render() {
     let className = "btn";
     if (this.props.disabled) {
-      className = "${className} disabled";
+      className = `${className} disabled`;
     }
     return (
       <button
-        className={"${className} ${this.props.className}"}
+        className={`${className} ${this.props.className}`}
         style={{ ...this.props.style }}
         onClick={this.props.onClick}
         onSubmit={this.props.onSubmit}
@@ -79,6 +79,33 @@ export class SpinnerButton extends Component {
         onSubmit={this.props.onSubmit}
       >
         <div className={className}></div>
+        {this.props.children}
+      </Button>
+    );
+  }
+}
+
+export class RoundButton extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  render() {
+    return (
+      <Button
+        className={`${this.props.className}`}
+        style={{
+          width: "50px",
+          height: "50px",
+          borderRadius: "50%",
+          padding: "2px",
+          ...this.props.style,
+        }}
+        onClick={this.props.onClick}
+        onSubmit={this.props.onSubmit}
+        disabled={this.props.disabled}
+      >
         {this.props.children}
       </Button>
     );

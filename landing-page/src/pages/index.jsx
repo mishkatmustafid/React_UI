@@ -22,12 +22,12 @@ export default class Index extends Component {
               className='d-flex flex-column flex-md-row align-items-stretch justify-content-center'
               style={{ width: "100%" }}
             >
-              <HomeCard
+              {/* <HomeCard
                 name='Education'
                 url='edu/exam/mcq/types/'
                 icon='file-signature'
                 className='col-md-3'
-              ></HomeCard>
+              ></HomeCard> */}
               <HomeCard
                 name='Exam Preparation'
                 url='edu/notes'

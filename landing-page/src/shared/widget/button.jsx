@@ -45,7 +45,42 @@ export class SpinnerButton extends Component {
     this.state = {};
   }
 
+  // Recheck this logic tree
+  // if spintype == grow case 1
+  // otherwise case 2 (whether grow or null)
+  config() {
+    let className = "spinner-border";
+    if (this.props.spinType) {
+      if (this.props.spinType === "grow") {
+        className = "spinner-grow";
+        if (this.props.smallSpin) {
+          className = `${className} spinner-grow-sm`;
+        }
+      } else {
+        if (this.props.smallSpin) {
+          className = `${className} spinner-border-sm`;
+        }
+      }
+    } else {
+      if (this.props.smallSpin) {
+        className = `${className} spinner-border-sm`;
+      }
+    }
+    return className;
+  }
+
   render() {
-    return <div></div>;
+    const className = this.config();
+    return (
+      <Button
+        className={`${this.props.className}`}
+        style={{ ...this.props.style }}
+        onClick={this.props.onClick}
+        onSubmit={this.props.onSubmit}
+      >
+        <div className={className}></div>
+        {this.props.children}
+      </Button>
+    );
   }
 }

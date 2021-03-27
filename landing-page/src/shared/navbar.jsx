@@ -1,5 +1,5 @@
 import React from "react";
-// import { connect } from "react-redux";
+import { connect } from "react-redux";
 import {
   MDBNavbar,
   MDBNavbarBrand,
@@ -17,14 +17,14 @@ import {
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import Logo from "../static/img/logo final .png";
 
 export default class Navbar extends React.Component {
-  // static propTypes = {
-  //   isAuthenticated: PropTypes.bool.isRequired,
-  //   user: PropTypes.object,
-  // };
+  static propTypes = {
+    isAuthenticated: PropTypes.bool.isRequired,
+    user: PropTypes.object,
+  };
 
   constructor(props) {
     super(props);
@@ -43,8 +43,8 @@ export default class Navbar extends React.Component {
   }
 
   adminPanel() {
-    if (true) {
-      if (true) {
+    if (true || this.props.user) {
+      if (true || this.props.user.account.isStaff) {
         return (
           <MDBNavItem>
             <MDBNavLink to='/'>Dashboard</MDBNavLink>
@@ -133,7 +133,7 @@ export default class Navbar extends React.Component {
                 </MDBDropdownToggle>
                 <MDBDropdownMenu basic>
                   <MDBDropdownItem>Income Tax</MDBDropdownItem>
-                  <MDBDropdownItem>Legal Drafts</MDBDropdownItem>
+                  <MDBDropdownItem to='/drafting'>Legal Drafts</MDBDropdownItem>
                 </MDBDropdownMenu>
               </MDBDropdown>
               <MDBDropdown size='sm'>
@@ -166,11 +166,11 @@ export default class Navbar extends React.Component {
             <MDBNavbarNav right ml-0>
               <MDBDropdown size='sm'>
                 <MDBDropdownToggle nav caret color='amber'>
-                  User Name
+                  Profile
                 </MDBDropdownToggle>
                 <MDBDropdownMenu basic>
-                  <MDBDropdownItem>Profile</MDBDropdownItem>
-                  <MDBDropdownItem>Sign Out</MDBDropdownItem>
+                  <MDBDropdownItem to='/profile'>Setting</MDBDropdownItem>
+                  <MDBDropdownItem to='/logout'>Sign Out</MDBDropdownItem>
                 </MDBDropdownMenu>
               </MDBDropdown>
             </MDBNavbarNav>
@@ -182,9 +182,9 @@ export default class Navbar extends React.Component {
   }
 }
 
-// const mapStateToProps = (state) => ({
-//   isAuthenticated: state.auth.isAuthenticated,
-//   user: state.auth.user,
-// });
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+  user: state.auth.user,
+});
 
 // export default connect(mapStateToProps)(Navbar);

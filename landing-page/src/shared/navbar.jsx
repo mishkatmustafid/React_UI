@@ -95,7 +95,7 @@ export default class Navbar extends React.Component {
           )}
           <MDBCollapse isOpen={this.state.collapse} navbar>
             <MDBNavbarNav left>
-              <MDBDropdown size='sm'>
+              {/* <MDBDropdown size='sm'>
                 <MDBDropdownToggle nav caret color='amber'>
                   Education
                 </MDBDropdownToggle>
@@ -104,7 +104,7 @@ export default class Navbar extends React.Component {
                   <MDBDropdownItem>HSC</MDBDropdownItem>
                   <MDBDropdownItem>SSC</MDBDropdownItem>
                 </MDBDropdownMenu>
-              </MDBDropdown>
+              </MDBDropdown> */}
               <MDBDropdown size='sm'>
                 <MDBDropdownToggle nav caret color='amber'>
                   Exam Preparation
